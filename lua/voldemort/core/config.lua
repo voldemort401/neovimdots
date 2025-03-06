@@ -1,4 +1,4 @@
-vim.cmd.colorscheme('kanagawa-dragon') -- set colorscheme
+vim.cmd.colorscheme('yugen') -- set colorscheme
 
 -- options 
 local opt = vim.opt
