@@ -1,2 +1,2 @@
-require ("voldemort.lazy")
-require ("voldemort.core")
+require("vld.config.lazy")
+require("vld.config.nvim_conf")
