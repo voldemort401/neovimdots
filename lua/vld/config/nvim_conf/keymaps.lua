@@ -4,6 +4,8 @@ local map = vim.api.nvim_set_keymap
 
 map("n", "<leader>e", "<cmd>NvimTreeOpen<CR>", {desc = "open file manager "})
 map("n", "<leader>ff", "<cmd>Telescope oldfiles<CR>", {desc = "Old files using Telescope"})
+map("n", "<leader>nc", "<cmd>find /home/ender/.config/nvim/lua/vld/config/nvim_conf/ <CR>", {desc = "open neovim conf folder"})
+
 map("i", "<C-c>", "<ESC>", {desc = "exit inser mode"})
 
 -- tabs

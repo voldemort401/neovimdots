@@ -1,4 +1,5 @@
-vim.cmd.colorscheme('yugen') -- set colorscheme
+#vim.cmd.colorscheme('yugen') -- set colorscheme
+
 
 -- options 
 local opt = vim.opt

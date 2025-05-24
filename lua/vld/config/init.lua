@@ -1,0 +1,32 @@
+require("vld.config.lspconf")
+require("vld.config.cmp")
+
+
+require("nvim-treesitter.configs").setup {
+    ensure_installed = {
+        "lua",
+        "rust",
+        "javascript",
+        "typescript",
+        "c",
+        "c_sharp",
+        "java",
+        "json",
+        "python",
+        "html"
+    },
+    highlight = {
+        enable = true,
+    },
+    incremental_selection = {
+        enable = true,
+        keymaps = {
+            init_selection = "gnn", -- set to `false` to disable one of the mappings
+            node_incremental = "grn",
+            scope_incremental = "grc",
+            node_decremental = "grm",
+        },
+    }
+}
+
+
