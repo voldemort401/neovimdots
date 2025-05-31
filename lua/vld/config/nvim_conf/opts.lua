@@ -1,4 +1,4 @@
-#vim.cmd.colorscheme('yugen') -- set colorscheme
+vim.cmd.colorscheme('tokyonight-moon') -- set colorscheme
 
 
 -- options 

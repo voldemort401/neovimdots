@@ -7,4 +7,5 @@ return {
     },
   },
   max_concurrent_installers = 10,
+  automatic_enable = true,
 }
