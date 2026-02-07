@@ -1,10 +1,4 @@
 return {
-
-  "nvim-treesitter/nvim-treesitter",
-  build = function()
-    require("nvim-treesitter.install").update({ with_sync = true })()
-  end,
-
   {
     'nvim-lualine/lualine.nvim',
     dependencies = {
@@ -19,10 +13,21 @@ return {
       })
     end,
   },
-
   {
-    'nvim-telescope/telescope.nvim', tag = '0.1.8',
-    dependencies = { 'nvim-lua/plenary.nvim' }
+  'nvim-telescope/telescope.nvim', version = '*',
+    dependencies = {
+        'nvim-lua/plenary.nvim',
+        -- optional but recommended
+        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    }
+  },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+  },
+  {
+    'nvim-telescope/telescope-media-files.nvim',
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   },
 
   --blink.cmp
@@ -96,5 +101,62 @@ return {
   {
     "voldemort401/cmpile.nvim"
   },
+  {
+    'wakatime/vim-wakatime',
+    lazy=false
+  },
+  {
+    'lewis6991/gitsigns.nvim'
+  },
+  {
+    'nvim-treesitter/nvim-treesitter',
+    lazy = false,
+    build = ':TSUpdate'
+  },
 
+  {'romgrk/barbar.nvim',
+    dependencies = {
+      'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+      'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+    },
+    init = function() vim.g.barbar_auto_setup = false end,
+    opts = {
+      -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
+      -- animation = true,
+      -- insert_at_start = true,
+      -- …etc.
+    },
+    version = '^1.0.0', -- optional: only update when a new 1.x version is released
+  },
+  {'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+  	  require('dashboard').setup {
+	      -- config
+    	}
+    end,
+    dependencies = { {'nvim-tree/nvim-web-devicons'}}
+  },
+  {
+	  'yazeed1s/oh-lucy.nvim'
+  },
+
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+    keys = {
+      {
+        "<leader>?",
+        function()
+          require("which-key").show({ global = false })
+        end,
+        desc = "Buffer Local Keymaps (which-key)",
+      },
+    },
+  },
 } 

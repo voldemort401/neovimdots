@@ -1,16 +1,14 @@
-vim.cmd.colorscheme('tokyonight-moon') -- set colorscheme
-
-
 -- options 
 local opt = vim.opt
+
 opt.relativenumber = true -- show relative line numbers
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)
 
 -- tabs & indentation
-opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
-opt.shiftwidth = 2 -- 2 spaces for indent width
-opt.expandtab = true -- expand tab to spaces
-opt.autoindent = true -- copy indent from current line when starting new one
+vim.opt.tabstop = 2      -- Number of spaces a <Tab> in the file counts for
+vim.opt.softtabstop = 2  -- Number of spaces a <Tab> counts for while performing editing operations
+vim.opt.shiftwidth = 2   -- Number of spaces to use for each step of (auto)indent
+vim.opt.expandtab = true -- Use spaces instead of tabs
 
 -- line wrapping
 opt.wrap = false -- disable line wrapping
